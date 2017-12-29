@@ -9,11 +9,35 @@ def hello_world():
 
 
 # 定义函数
-def fib(n):
-    a, b = 0, 1
-    while b < n:
-        print(b, end=',')
-        a, b = b, a + b
+def fib(limit):
+    "这是文档"
+    before, after = 0, 1
+    while after < limit:
+        print(after, end=',')
+        before, after = after, before + after
+
+
+def fib2(limit):
+    result = []
+    before, after = 0, 1
+    while after < limit:
+        result.append(before)
+        before, after = after, before + after
+    return result
+
+
+def ask_ok(prompt, retries = 4, complaint = 'Yes or No, please!'):
+    '有默认参数的方法'
+    while True:
+        ok = input(prompt)
+        if ok in ('y', 'ye', 'yes'):    # in 用于判断列表中是否包含某一值
+            return True
+        if ok in ('nope','n','no', 'nop'):
+            return False
+        retries -= 1
+        if retries < 0:
+            raise IOError('refuse nik user')
+        print(complaint)
 
 
 if __name__ == '__main__':
@@ -60,7 +84,7 @@ if __name__ == '__main__':
     #     print('More')
 
     # for循环
-    a = ['1jkfd', '3feyhhnvds', '2fdsafdsa']
+    # a = ['1jkfd', '3feyhhnvds', '2fdsafdsa']
     # for x in a:
     #     print(x, len(x))
     # 循环时改变序列的值
@@ -78,4 +102,15 @@ if __name__ == '__main__':
     # print(range(0, 10))
     # print(list(range(0, 10)))
 
-    fib(2000)
+    # fib(2000)
+
+    # 函数可以赋值
+    # f = fib
+    # fib(10)
+    # print(fib)
+    # print(f)
+    # print(f(10))
+    #
+    # print(fib2(200))
+
+    ask_ok('Do you want to quit?')
