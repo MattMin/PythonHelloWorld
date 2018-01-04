@@ -26,18 +26,43 @@ def fib2(limit):
     return result
 
 
-def ask_ok(prompt, retries = 4, complaint = 'Yes or No, please!'):
-    '有默认参数的方法'
+def ask_ok(prompt, retries=4, complaint='Yes or No, please!'):
+    """有默认参数的方法.
+
+    这是注释.
+    """
     while True:
         ok = input(prompt)
-        if ok in ('y', 'ye', 'yes'):    # in 用于判断列表中是否包含某一值
+        if ok in ('y', 'ye', 'yes'):  # in 用于判断列表中是否包含某一值
             return True
-        if ok in ('nope','n','no', 'nop'):
+        if ok in ('nope', 'n', 'no', 'nop'):
             return False
         retries -= 1
         if retries < 0:
             raise IOError('refuse nik user')
         print(complaint)
+
+
+def f(a, L=None):
+    if L is None:
+        L = []
+    L.append(a)
+    return L
+
+
+def cheeseshop(kind, *arguments, **keywords):
+    print("-- Do you have any", kind, "?")
+    print("-- I'm sorry, we're all out of", kind)
+    for arg in arguments:
+        print(arg)
+    print("-" * 40)
+    keys = sorted(keywords.keys())
+    for kw in keys:
+        print(kw, ":", keywords[kw])
+
+
+def concat(*args, sep=', '):
+    return sep.join(args)
 
 
 if __name__ == '__main__':
@@ -113,4 +138,40 @@ if __name__ == '__main__':
     #
     # print(fib2(200))
 
-    ask_ok('Do you want to quit?')
+    # ask_ok('Do you want to quit?')
+
+    # print(f(1))
+    # print(f(2))
+    # print(f(3))
+
+    # cheeseshop("Limburger", "It's very runny, sir.",
+    #            "It's really very, VERY runny, sir.",
+    #            shopkeeper="Michael Palin",
+    #            client="John Cleese",
+    #            sketch="Cheese Shop Sketch")
+    #
+    # print(concat('a','b','c'))
+    #
+    # args = [3, 6]
+    # print(list(range(*args)))
+
+    # square = [(x, x**2) for x in range(1, 9)]
+    # print(square)
+
+    # t = 12345, 54321, 'jklklj'
+    # print(t)
+    #
+    # x, y, z = t
+    # print(x)
+    # print(y)
+    # print(z)
+
+    # knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+    # for k, v in knights.items():
+    #     print(k,v)
+
+    print(dir())
+
+
+
+    pass
