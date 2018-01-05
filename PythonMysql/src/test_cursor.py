@@ -27,5 +27,6 @@ print(rs)
 rs = cursor.fetchall()
 print(rs)
 
+# 关闭连接
 cursor.close()
 conn.close()

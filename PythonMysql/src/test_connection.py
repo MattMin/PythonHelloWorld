@@ -16,5 +16,6 @@ cursor = conn.cursor()
 print(conn)
 print(cursor)
 
+# 关闭连接
 cursor.close()
 conn.close()

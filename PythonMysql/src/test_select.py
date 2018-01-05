@@ -20,5 +20,6 @@ rs = cursor.fetchall()
 for row in rs:
     print('userId=%s, userName=%s, age=%s' % row)
 
+# 关闭连接
 cursor.close()
 conn.close()
