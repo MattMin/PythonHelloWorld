@@ -2,7 +2,7 @@ import pymysql
 
 # 创建connection
 conn = pymysql.connect(
-    host='192.168.8.39',
+    host='localhost',
     port=3306,
     user='root',
     password='root',
@@ -13,8 +13,19 @@ conn = pymysql.connect(
 # 获取connection的cursor
 cursor = conn.cursor()
 
-print(conn)
-print(cursor)
+sql = 'select * from person_1'
+cursor.execute(sql)
+
+print(cursor.rowcount)
+
+rs = cursor.fetchone()
+print(rs)
+
+rs = cursor.fetchmany(2)
+print(rs)
+
+rs = cursor.fetchall()
+print(rs)
 
 cursor.close()
 conn.close()

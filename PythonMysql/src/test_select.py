@@ -13,8 +13,12 @@ conn = pymysql.connect(
 # 获取connection的cursor
 cursor = conn.cursor()
 
-print(conn)
-print(cursor)
+sql = 'select * from person_1'
+cursor.execute(sql)
+
+rs = cursor.fetchall()
+for row in rs:
+    print('userId=%s, userName=%s, age=%s' % row)
 
 cursor.close()
 conn.close()
