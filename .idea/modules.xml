@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/DjangoHelloWorld/DjangoHelloWorld.iml" filepath="$PROJECT_DIR$/DjangoHelloWorld/DjangoHelloWorld.iml" />
       <module fileurl="file://$PROJECT_DIR$/PythonDemo.iml" filepath="$PROJECT_DIR$/PythonDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/PythonMysql/PythonMysql.iml" filepath="$PROJECT_DIR$/PythonMysql/PythonMysql.iml" />
     </modules>
